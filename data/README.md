@@ -319,6 +319,29 @@ is compatible with CC BY 4.0, hence `cc-by-4.0` above. Credit, for example:
     出典：「都市計画決定GISデータ」（国土交通省）
     （https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html）を加工して作成
 
+The same data is also distributed as the 国土数値情報 dataset
+都市計画決定情報 (A55, <https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A55-2024.html>),
+which says it was edited from this 都市計画決定GISデータ and licenses it as
+"オープンデータ (CC_BY_4.0)" with no restriction noted; the latest A55 edition
+is FY2024, one year older than this one.
+
+One point is not settled. Where a municipality provided no GIS data and
+made no change after 1 April 2019, MLIT edited the 2018 国土数値情報. The
+older 国土数値情報 zoning dataset (用途地域 A29, FY2019) carried
+per-municipality conditions
+(<https://nlftp.mlit.go.jp/ksj/gml/datalist/Situation_of_the_data_collection_RestrictedZoneData.pdf>:
+of 1,213 municipalities, 176 conditional, among them 114 "再配信不可" (no
+redistribution), and 56 "公開不可" (not to be published)). Matching that list
+with MLIT's list of municipalities (`raw/fy2025/docs/001864274.xlsx`, titled
+"オープンデータ化項目"), 22 municipalities that had a condition in A29 have
+zoning here with a data date before April 2019, so their zoning may come from
+the 2018 国土数値情報 (for example 土浦市, 阪南市, 高島市). The data has no
+per-feature source column, so this cannot be checked feature by feature. MLIT
+publishes this data under its site terms and the 国土数値情報 republishes it
+as plain CC BY 4.0, and neither says that the A29 conditions carry over;
+whether those municipalities agreed to lift them was not confirmed. If your
+use depends on it, check with the municipality or MLIT.
+
 The zips under `raw/` are MLIT's, byte for byte. What the Parquet changes is
 listed in `LICENSE` beside this file. MLIT did not make the Parquet and has
 not reviewed it; this dataset is not published by the Government of Japan.
