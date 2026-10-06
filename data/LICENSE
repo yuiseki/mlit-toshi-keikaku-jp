@@ -1,0 +1,47 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Everything under this directory comes from 都市計画決定GISデータ, published by
+the City Bureau of the Ministry of Land, Infrastructure, Transport and
+Tourism of Japan (国土交通省都市局):
+
+  出典：「都市計画決定GISデータ」（国土交通省）
+  （https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html）を加工して作成
+
+MLIT's site terms (https://www.mlit.go.jp/link.html) place the content of
+its website under the Public Data License version 1.0 (公共データ利用規約
+（第1.0版）, PDL1.0) unless a rights notice says otherwise. The data pages
+give no other licence, and MLIT's list of content under other rules
+(https://www.mlit.go.jp/page/kanbo01_hy_003657.html) does not include them.
+PDL1.0 states that it is compatible with CC BY 4.0. That is why the label
+above is CC BY 4.0.
+
+The landing page's conditions of use (このデータの使用許諾条件, quoted in full
+in README.md) say that the data is for reference, that its extents are
+approximate, and that neither the State nor the local governments that
+supplied the original data are liable for any use of it, including use of
+edited data. They apply to this copy as well.
+
+The terms ask that a modification be declared apart from the attribution,
+and that modified content not be presented as though the State had made it.
+This dataset is not published by the Government of Japan.
+
+  本データセットは「都市計画決定GISデータ」（国土交通省）を加工して作成して
+  います。加工の内容は次のとおりです。
+
+  1. 都道府県ごとのシェープファイル形式の zip に含まれる全シェープファイルを、
+     レイヤーごとに 1 つの GeoParquet にまとめた（parquet/ 以下）
+  2. 各行に、元のシェープファイルの zip 内のパス（source_file）と、
+     そのシェープファイル内のレコード番号（fid、0 から）を加えた
+  3. 列の型を列名から定めた。名前が Code で終わる列は整数、FAR と BCR は
+     実数、それ以外は文字列とした。数値型の DBF フィールドに入っていた
+     「*」のみの値（DBF の空値）は空（NULL）とした
+  4. 行を source_file、fid の順に並べた
+
+  列の名前、文字列の値、座標は変更していません（座標系は JGD2011
+  (EPSG:6668) のまま）。raw/ 以下は配布されたファイルをそのまま保存した
+  もので、バイト列は原本と同一です。
+
+The code that fetches, checks and converts is MIT, in the repository this
+dataset was built from (https://github.com/yuiseki/mlit-toshi-keikaku-jp), and
+does not apply here.

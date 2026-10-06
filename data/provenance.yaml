@@ -1,0 +1,166 @@
+# Where this data comes from and what was done to it.
+
+source:
+  name: 都市計画決定GISデータ 全国データ (urban planning decision GIS data, national edition)
+  publisher: 国土交通省 都市局 都市計画課 都市計画調査室 (City Planning Division, City Bureau, MLIT)
+  landing_page: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html
+  download_page: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000182.html
+  announcement: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000190.html
+  original_sources: 地方公共団体等作成の都市計画総括図又はGISデータ、国土交通省作成の国土数値情報
+  licence:
+    applied: PDL1.0 via MLIT's site terms (https://www.mlit.go.jp/link.html, read 2026-10-06)
+    exceptions_list: https://www.mlit.go.jp/page/kanbo01_hy_003657.html (does not list this data)
+    card: "license: cc-by-4.0 (PDL1.0 is compatible with CC BY 4.0)"
+    attribution_required: true
+    indicate_changes: true
+    no_presenting_as_government: true
+    conditions_of_use: |
+      The landing page's このデータの使用許諾条件 (ticked before the download
+      button works): reference use only, approximate extents, not complete or
+      current, no liability of the State or the local governments. Quoted in
+      full in README.md and in raw/fy2025/MANIFEST.json (terms_of_use).
+    survey_act: no notice on the data pages; the site terms mention the Survey Act only for GSI basic survey results
+  citation: >-
+    出典：「都市計画決定GISデータ」（国土交通省）
+    （https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html）を加工して作成
+
+update_pattern: |
+  One edition on the pages at a time (データ作成年度). Corrections replace zips
+  in place, noted beside them in the download table; the Shapefile and
+  CityGML zips keep their URLs, the GeoJSON zips got new ones. shp/13_tokyo.zip
+  was replaced again on 17 July 2026 without an entry in the history. Earlier
+  editions are not online. Here an edition is a directory; within it the
+  files follow the source (01_download.py --refresh).
+
+editions:
+  fy2025:
+    fiscal_year: 令和7年度
+    update_history:
+      - 令和8年5月21日
+      - 令和8年7月1日（シェープファイル形式・GeoJSONファイル形式　一部修正）
+      - 令和8年7月2日（シェープファイル形式・GeoJSONファイル形式　一部修正）
+      - 令和8年7月7日（CityGMLファイル形式　一部修正）
+    listing_as_of: 令和8年7月1日
+    fetched: 2026-10-06
+    files:
+      shp: {count: 47, bytes: 605061992, shapefiles: 8173, encoding: UTF-8 (.cpg), crs: EPSG:6668 (GCS_JGD_2011)}
+      geojson: {count: 47, bytes: 785216248, files: 8173, features: 424335, crs: "urn:ogc:def:crs:EPSG::6668"}
+      citygml: {count: 47, bytes: 634326282, files: 7380, crs: EPSG:6697, schema: "CityGML 2.0, i-UR 3.0 urf"}
+      docs: {count: 3, bytes: 817199}
+      pages: {count: 2, bytes: 41408}
+      total: {count: 146, bytes: 2025463129}
+      per_file: raw/fy2025/MANIFEST.json (url, bytes, sha256, last_modified, fetched_at, note)
+    documents:
+      docs/001752702.pdf:
+        url: https://www.mlit.go.jp/toshi/tosiko/content/001752702.pdf
+        bytes: 241005
+        sha256: cee4f6a1e2d6465551feaf3dec61f31c98ca3d8b3ec91f6805b4e412727ebd74
+        last_modified: "Thu, 21 May 2026 05:30:40 GMT"
+      docs/001752828.pdf:
+        url: https://www.mlit.go.jp/toshi/tosiko/content/001752828.pdf
+        bytes: 367590
+        sha256: b46f20a00d0d17ab8e9a204ef1bde2b433dd8b76e5472af54d68f80aae23b78c
+        last_modified: "Thu, 21 May 2026 05:30:40 GMT"
+      docs/001864274.xlsx:
+        url: https://www.mlit.go.jp/toshi/tosiko/content/001864274.xlsx
+        bytes: 208604
+        sha256: 7fa916dca9d784e035115c8181e27c646e2d58a7cb70fd6634f568ca6e331aa9
+        last_modified: "Thu, 02 Jul 2026 04:54:09 GMT"
+      pages/toshi_tosiko_tk_000087.html:
+        url: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html
+        bytes: 11844
+        sha256: 3b51ccccfe06bd8ddc0eeff7b2f558c85a83b16e1d0ef310745164f6e44f45ec
+        last_modified: "Wed, 08 Jul 2026 02:20:11 GMT"
+      pages/toshi_tosiko_tk_000182.html:
+        url: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000182.html
+        bytes: 29564
+        sha256: e340be5101bc3efbf07708b62284a22972b6ebc0c5744ca955dc01173cea0b92
+        last_modified: "Fri, 17 Jul 2026 04:11:59 GMT"
+    corrected_in_place:
+      citygml/03_iwate.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752780.zip, last_modified: "Wed, 08 Jul 2026 02:21:12 GMT"}
+      citygml/13_tokyo.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752792.zip, last_modified: "Wed, 08 Jul 2026 02:21:11 GMT"}
+      citygml/14_kanagawa.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752793.zip, last_modified: "Wed, 08 Jul 2026 02:21:11 GMT"}
+      citygml/20_nagano.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752799.zip, last_modified: "Wed, 08 Jul 2026 02:21:13 GMT"}
+      citygml/25_shiga.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752804.zip, last_modified: "Wed, 08 Jul 2026 02:21:10 GMT"}
+      citygml/26_kyoto.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752805.zip, last_modified: "Wed, 08 Jul 2026 02:21:10 GMT"}
+      citygml/27_osaka.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752806.zip, last_modified: "Wed, 08 Jul 2026 02:21:10 GMT"}
+      citygml/29_nara.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752808.zip, last_modified: "Wed, 08 Jul 2026 02:21:12 GMT"}
+      citygml/32_shimane.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752811.zip, last_modified: "Wed, 08 Jul 2026 02:21:12 GMT"}
+      citygml/43_kumamoto.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752822.zip, last_modified: "Wed, 08 Jul 2026 02:21:12 GMT"}
+      citygml/45_miyazaki.zip: {note: "（R8.7.7修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752824.zip, last_modified: "Wed, 08 Jul 2026 02:21:12 GMT"}
+      geojson/03_iwate.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904010.zip, last_modified: "Thu, 02 Jul 2026 01:19:35 GMT"}
+      geojson/13_tokyo.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904020.zip, last_modified: "Thu, 02 Jul 2026 01:19:36 GMT"}
+      geojson/14_kanagawa.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904021.zip, last_modified: "Thu, 02 Jul 2026 04:55:10 GMT"}
+      geojson/20_nagano.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904027.zip, last_modified: "Thu, 02 Jul 2026 01:19:34 GMT"}
+      geojson/25_shiga.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904032.zip, last_modified: "Thu, 02 Jul 2026 04:55:11 GMT"}
+      geojson/26_kyoto.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904033.zip, last_modified: "Thu, 02 Jul 2026 01:19:35 GMT"}
+      geojson/27_osaka.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904034.zip, last_modified: "Thu, 02 Jul 2026 04:55:09 GMT"}
+      geojson/29_nara.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904037.zip, last_modified: "Thu, 02 Jul 2026 04:55:09 GMT"}
+      geojson/32_shimane.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904040.zip, last_modified: "Thu, 02 Jul 2026 01:19:36 GMT"}
+      geojson/43_kumamoto.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904051.zip, last_modified: "Thu, 02 Jul 2026 01:19:37 GMT"}
+      geojson/45_miyazaki.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001904053.zip, last_modified: "Thu, 02 Jul 2026 01:19:36 GMT"}
+      shp/03_iwate.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752714.zip, last_modified: "Thu, 02 Jul 2026 01:19:33 GMT"}
+      shp/13_tokyo.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752732.zip, last_modified: "Fri, 17 Jul 2026 04:11:58 GMT"}
+      shp/14_kanagawa.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752733.zip, last_modified: "Thu, 02 Jul 2026 04:55:11 GMT"}
+      shp/20_nagano.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752741.zip, last_modified: "Thu, 02 Jul 2026 01:19:33 GMT"}
+      shp/25_shiga.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752746.zip, last_modified: "Thu, 02 Jul 2026 04:55:11 GMT"}
+      shp/26_kyoto.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752747.zip, last_modified: "Thu, 02 Jul 2026 01:19:33 GMT"}
+      shp/27_osaka.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752749.zip, last_modified: "Thu, 02 Jul 2026 04:55:09 GMT"}
+      shp/29_nara.zip: {note: "（R8.7.2修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752751.zip, last_modified: "Thu, 02 Jul 2026 04:55:10 GMT"}
+      shp/32_shimane.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752757.zip, last_modified: "Thu, 02 Jul 2026 01:19:34 GMT"}
+      shp/43_kumamoto.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752770.zip, last_modified: "Thu, 02 Jul 2026 01:19:34 GMT"}
+      shp/45_miyazaki.zip: {note: "（R8.7.1修正）", url: https://www.mlit.go.jp/toshi/tosiko/content/001752839.zip, last_modified: "Thu, 02 Jul 2026 01:19:33 GMT"}
+    subsets:
+      fy2025.bouka: {file: parquet/fy2025/bouka.parquet, rows: 10040, municipalities: 581, null_geometry: 109}
+      fy2025.chikukei: {file: parquet/fy2025/chikukei.parquet, rows: 10886, municipalities: 601, null_geometry: 0}
+      fy2025.douro: {file: parquet/fy2025/douro.parquet, rows: 191584, municipalities: 785, null_geometry: 5802}
+      fy2025.fukkousaiseikyoten: {file: parquet/fy2025/fukkousaiseikyoten.parquet, rows: 2, municipalities: 1, null_geometry: 0}
+      fy2025.fuuchichiku: {file: parquet/fy2025/fuuchichiku.parquet, rows: 2155, municipalities: 185, null_geometry: 0}
+      fy2025.jyuntoshi: {file: parquet/fy2025/jyuntoshi.parquet, rows: 41, municipalities: 25, null_geometry: 0}
+      fy2025.koudori: {file: parquet/fy2025/koudori.parquet, rows: 976, municipalities: 231, null_geometry: 7}
+      fy2025.koudoti: {file: parquet/fy2025/koudoti.parquet, rows: 18461, municipalities: 214, null_geometry: 1}
+      fy2025.kouen: {file: parquet/fy2025/kouen.parquet, rows: 41161, municipalities: 716, null_geometry: 0}
+      fy2025.kousoujyukyo: {file: parquet/fy2025/kousoujyukyo.parquet, rows: 1, municipalities: 1, null_geometry: 0}
+      fy2025.kyojyuchosei: {file: parquet/fy2025/kyojyuchosei.parquet, rows: 4, municipalities: 1, null_geometry: 0}
+      fy2025.rekifuu: {file: parquet/fy2025/rekifuu.parquet, rows: 77, municipalities: 7, null_geometry: 0}
+      fy2025.ritteki: {file: parquet/fy2025/ritteki.parquet, rows: 9675, municipalities: 582, null_geometry: 0}
+      fy2025.ryokukachiiki: {file: parquet/fy2025/ryokukachiiki.parquet, rows: 217, municipalities: 4, null_geometry: 0}
+      fy2025.senbiki: {file: parquet/fy2025/senbiki.parquet, rows: 7259, municipalities: 637, null_geometry: 0}
+      fy2025.soubou: {file: parquet/fy2025/soubou.parquet, rows: 51, municipalities: 5, null_geometry: 0}
+      fy2025.tkbt: {file: parquet/fy2025/tkbt.parquet, rows: 10319, municipalities: 337, null_geometry: 65}
+      fy2025.tochiku: {file: parquet/fy2025/tochiku.parquet, rows: 6522, municipalities: 485, null_geometry: 0}
+      fy2025.tokei: {file: parquet/fy2025/tokei.parquet, rows: 10279, municipalities: 1373, null_geometry: 0}
+      fy2025.tokureiyouseki: {file: parquet/fy2025/tokureiyouseki.parquet, rows: 2, municipalities: 2, null_geometry: 0}
+      fy2025.tokuryoku: {file: parquet/fy2025/tokuryoku.parquet, rows: 687, municipalities: 80, null_geometry: 0}
+      fy2025.tokuteibou: {file: parquet/fy2025/tokuteibou.parquet, rows: 14, municipalities: 8, null_geometry: 0}
+      fy2025.tokuteiyouto: {file: parquet/fy2025/tokuteiyouto.parquet, rows: 1639, municipalities: 77, null_geometry: 0}
+      fy2025.tokuteiyuudou: {file: parquet/fy2025/tokuteiyuudou.parquet, rows: 29, municipalities: 6, null_geometry: 0}
+      fy2025.toshisaisei: {file: parquet/fy2025/toshisaisei.parquet, rows: 95, municipalities: 14, null_geometry: 0}
+      fy2025.youto: {file: parquet/fy2025/youto.parquet, rows: 102159, municipalities: 1215, null_geometry: 0}
+    counts:
+      rows: 424335
+      layers: 26
+      municipalities_in_list: 1385
+      attribute_values_checked: 4967475
+
+checked:
+  note: scripts/02_verify.py, with Python's zipfile, json and its own DBF/SHP/WKB readers, and DuckDB, before upload
+  items:
+    - every raw file against MANIFEST.json (size and sha256); every zip and the xlsx pass testzip; the PDFs are PDFs
+    - every Shapefile has .dbf, .shx, .prj and a .cpg saying UTF-8; .shx records equal the DBF header
+    - every GeoJSON zip holds the same 8,173 files as the Shapefile zips, with the same feature counts, CRS EPSG:6668
+    - every layer's Parquet has its DBFs' rows (424,335 in all), in their order, columns and types as the rules give
+    - all 4,967,475 attribute values equal the DBFs, read as strict UTF-8 without GDAL
+    - every geometry has the x, y bytes of its .shp record, part by part; null shapes are NULL
+    - Citycode equals the code in the file name in every row
+    - GeoParquet 1.0.0 metadata states EPSG:6668; a DuckDB without extensions opens each file; no bloom filters
+
+modifications:
+  raw: none. MLIT's files, byte for byte; the two HTML pages as fetched.
+  parquet:
+    - all Shapefiles of a layer, from all 47 prefecture zips, in one file per layer
+    - source_file (path in the zip) and fid (record number from 0) added; rows sorted by them
+    - types from column names (…Code INTEGER, FAR and BCR DOUBLE, else VARCHAR), each cast guarded; '*'-filled numeric DBF fields, the DBF null, are NULL
+    - geometry as read by GDAL from the .shp, EPSG:6668, not reprojected
+    - written with zstd, row groups of 100,000, without bloom filters
+  not_converted: GeoJSON (same features as the Shapefiles), CityGML (a different model), documents
